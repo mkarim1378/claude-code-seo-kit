@@ -1,0 +1,15 @@
+# exportها حجیم‌اند و محتوای سایت را دارند؛ داخل git نرو
+data/ai-pack/*
+data/gsc/*
+data/archive/*
+!data/ai-pack/.gitkeep
+!data/gsc/.gitkeep
+!data/archive/.gitkeep
+
+# تنظیمات شخصی Claude Code
+.claude/settings.local.json
+CLAUDE.local.md
+
+# رمز و کلید
+.env
+*.key
