@@ -35,7 +35,7 @@
 
 **نکته‌ی یک‌باره برای پروژه‌های قدیمی:** پروژه‌هایی که قبل از 1.1 ساخته شده‌اند `/sync-starter` را ندارند. یک بار فایل `.claude/commands/sync-starter.md` را از ریپوی starter در همان پوشه کپی کن، بعد دستور کار می‌کند.
 
-**برای نگه‌داشتن starter قابل‌آپدیت:** بعد از هر تغییر مهم، نسخه را در `starter.json` و `CHANGELOG.md` بالا ببر و روی همان کامیت تگ بزن (مثلاً `git tag v1.3.0 && git push --tags`). با تگ، `/sync-starter` می‌تواند تغییر starter را از تغییر محلی تفکیک کند.
+**برای نگه‌داشتن starter قابل‌آپدیت:** بعد از هر تغییر مهم، نسخه را در `starter.json` و `CHANGELOG.md` بالا ببر و روی همان کامیت تگ بزن (مثلاً `git tag vX.Y.Z && git push --tags`). با تگ، `/sync-starter` می‌تواند تغییر starter را از تغییر محلی تفکیک کند.
 
 ## ساختار
 
@@ -47,10 +47,20 @@
 | `starter.json` · `CHANGELOG.md` | نسخه‌ی starter و فهرست مسیرهای قابل sync |
 | `notes/MEMORY.md` | حافظه‌ی کوتاه پروژه (سقف ۸۰ خط)، خودکار لود می‌شود |
 | `notes/decisions.md` · `sprint.md` · `digests/` · `archive/` | جزئیات تصمیم‌ها، Sprint، خلاصه‌ی فایل‌های حجیم، آرشیو |
-| `data/` | exportها (داخل git نمی‌رود): `ai-pack/` افزونه، `gsc/` Search Console، `competitors/` رقبا، `archive/` قدیمی‌ها |
+| `data/` | exportها (داخل git هستند، پس ریپو باید private باشد): `ai-pack/` افزونه، `gsc/` Search Console، `competitors/` رقبا، `archive/` قدیمی‌ها |
 | `reports/` | گزارش‌های نهایی |
 | `.claude/settings.json` | دسترسی‌های مشترک پروژه: خواندن `.env`، کلیدها و فایل‌های SQL ممنوع است (تنظیمات شخصی در `settings.local.json`، خارج از git) |
 | `.claude/commands/` | دستورهای `/new-project`، `/competitors`، `/sync-starter`، `/wrapup`، `/memory-cleanup`، `/digest` |
+
+## کار روی چند سیستم
+
+همه‌ی چیزهای پروژه (`data/`، `notes/`، `reports/`، `CLAUDE.md`) داخل git است، پس روی سیستم دیگر با `git clone` یا `git pull` ادامه می‌دهی. `.gitignore` فقط این‌ها را کنار می‌گذارد: رمز و کلید (`.env`، `*.key`، `*.pem`)، بکاپ دیتابیس (`*.sql*`) و فایل‌های مخصوص هر سیستم (`.claude/settings.local.json`، `CLAUDE.local.md`، `.omc/`).
+
+- **ریپوی هر پروژه را همیشه private نگه دار.** exportها محتوای سایت و داده‌ی رقبا را دارند. `/new-project` قبل از دست‌زدن به `data/` وضعیت ریپو را چک می‌کند.
+- **قبل از شروع `pull`، بعد از پایان `push`** (`/wrapup` یادآوری می‌کند).
+- **حجم فایل:** GitHub فایل بالای ۱۰۰ مگابایت را رد می‌کند. برای export بزرگ‌تر از [Git LFS](https://git-lfs.com) استفاده کن یا فایل را تکه کن.
+- **`data/archive/` با گذشت زمان بزرگ می‌شود.** exportهای قدیمی در تاریخچه‌ی git هم می‌مانند؛ اگر ریپو سنگین شد، این پوشه را گاهی پاک‌سازی کن.
+- تأییدهای دسترسی شخصی (`settings.local.json`) بین سیستم‌ها منتقل نمی‌شوند؛ روی سیستم جدید دوباره تأیید کن.
 
 ## روال کار
 

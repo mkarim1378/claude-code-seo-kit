@@ -1,20 +1,18 @@
-# exportها حجیم‌اند و محتوای سایت را دارند؛ داخل git نرو
-data/ai-pack/*
-data/gsc/*
-data/archive/*
-data/competitors/*
-!data/competitors/.gitkeep
-!data/ai-pack/.gitkeep
-!data/gsc/.gitkeep
-!data/archive/.gitkeep
+# عمداً کم: همه‌چیز (data/، notes/، reports/) داخل git است تا کار روی سیستم‌های مختلف ادامه پیدا کند.
+# به همین دلیل ریپوی هر پروژه باید PRIVATE باشد (README را ببین).
 
-# تنظیمات شخصی Claude Code
+# رمز و کلید (هرگز commit نشود)
+.env
+.env.*
+*.key
+*.pem
+
+# بکاپ دیتابیس (سنگین و حساس؛ طبق docs/safety.md اصلاً در این پوشه نگذار)
+*.sql
+*.sql.gz
+*.sql.zip
+
+# مخصوص هر سیستم، نه مخصوص پروژه
 .claude/settings.local.json
 CLAUDE.local.md
-
-# رمز و کلید
-.env
-*.key
-
-# state ابزارهای جانبی
 .omc/

@@ -39,7 +39,7 @@ Run `claude` inside the project folder and type `/sync-starter`. It:
 
 **One-time note for older projects:** projects created before 1.1 don't have `/sync-starter`. Copy `.claude/commands/sync-starter.md` from the starter repo into the same folder once, and the command works from then on.
 
-**To keep the starter updatable:** after every meaningful change, bump the version in `starter.json` and `CHANGELOG.md`, and tag the same commit (for example `git tag v1.3.0 && git push --tags`). With tags, `/sync-starter` can tell starter changes apart from local changes.
+**To keep the starter updatable:** after every meaningful change, bump the version in `starter.json` and `CHANGELOG.md`, and tag the same commit (for example `git tag vX.Y.Z && git push --tags`). With tags, `/sync-starter` can tell starter changes apart from local changes.
 
 ## Structure
 
@@ -51,10 +51,20 @@ Run `claude` inside the project folder and type `/sync-starter`. It:
 | `starter.json` · `CHANGELOG.md` | Starter version and the list of syncable paths |
 | `notes/MEMORY.md` | Short project memory (80-line cap), loaded automatically |
 | `notes/decisions.md` · `sprint.md` · `digests/` · `archive/` | Decision details, sprint, digests of large files, archive |
-| `data/` | Exports (not tracked by git): `ai-pack/` plugin export, `gsc/` Search Console, `competitors/` competitor data, `archive/` older exports |
+| `data/` | Exports (tracked by git, so the repo must be private): `ai-pack/` plugin export, `gsc/` Search Console, `competitors/` competitor data, `archive/` older exports |
 | `reports/` | Final reports |
 | `.claude/settings.json` | Shared project permissions: reading `.env`, keys and SQL files is denied (personal settings go in `settings.local.json`, outside git) |
 | `.claude/commands/` | Commands: `/new-project`, `/competitors`, `/sync-starter`, `/wrapup`, `/memory-cleanup`, `/digest` |
+
+## Working across several machines
+
+Everything in a project (`data/`, `notes/`, `reports/`, `CLAUDE.md`) is tracked by git, so you can continue on another machine with `git clone` / `git pull`. `.gitignore` only excludes secrets (`.env`, `*.key`, `*.pem`), database dumps (`*.sql*`) and per-machine files (`.claude/settings.local.json`, `CLAUDE.local.md`, `.omc/`).
+
+- **Keep every project repo private.** Exports contain the site's content and competitor data. `/new-project` checks the repo's visibility before touching `data/`.
+- **Pull before you start, push when you finish** (`/wrapup` reminds you).
+- **File size:** GitHub rejects files over 100 MB. If an export is larger, use [Git LFS](https://git-lfs.com) for it or split it.
+- **`data/archive/` grows over time.** Old exports stay in git history anyway; prune the folder now and then if the repo gets heavy.
+- Personal permission approvals (`settings.local.json`) don't travel between machines; approve them again on the new one.
 
 ## Workflow
 
