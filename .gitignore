@@ -2,6 +2,8 @@
 data/ai-pack/*
 data/gsc/*
 data/archive/*
+data/competitors/*
+!data/competitors/.gitkeep
 !data/ai-pack/.gitkeep
 !data/gsc/.gitkeep
 !data/archive/.gitkeep

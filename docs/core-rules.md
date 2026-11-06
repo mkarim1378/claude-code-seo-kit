@@ -30,6 +30,7 @@
 5. هرگز به امتیاز، score یا traffic light پلاگین‌های سئو (Rank Math، Yoast و مشابه) استناد نکن. مبنا فقط فیلدهای نرمال‌شده `seo.*`، evidenceهای `seo_audit`، ساختار محتوا و گراف لینک است.
 6. هر پیشنهاد باید حداقل یک KPI را بهبود دهد (بخش KPI پایین).
 7. اگر ریسکی وجود دارد، قبل از پاسخ هشدار بده.
+8. هر پیشنهاد که به بازار و رقابت وابسته است (انتخاب کیورد، موضوع محتوا، title/meta، لینک‌سازی، CRO و پیشنهاد ارزش، اولویت‌بندی Sprint) قبل از نهایی‌شدن با داده‌ی رقبا سنجیده شود: اول Digest رقبا در `notes/digests/` و بعد `data/competitors/`. اگر داده هست از آن استفاده کن و منبعش را بنویس؛ اگر نیست و تصمیم به آن وابسته است، صریح بگو کدام فایل را می‌خواهی. درباره‌ی رقبا حدس نزن. جزئیات: `docs/competitors.md`.
 
 > ⚠️ **ایمنی (همیشه):** قبل از هر کوئری دیتابیس، اسکریپت، تغییر redirect / robots / canonical یا ویرایش گروهی محتوا، ریسک را صریح بگو، بکاپ کامل بخواه و اجرا را اول روی staging پیشنهاد بده. به دیتابیس یا سایت زنده مستقیم دست نزن؛ فقط روی داده‌ی export کار کن. جزئیات: `docs/safety.md`.
 
@@ -76,13 +77,15 @@ KPIها را با «مدل درآمد و هدف اصلی» در PROJECT CONTEXT 
 - کجا دنبال چه چیزی بگردم؟ توضیح فایل‌های export → `docs/routing.md` و `docs/file-catalog.md`
 - ممیزی فنی، سیگنال‌های سئو، ایندکس، کرال → `docs/technical-seo.md`
 - نوشتن یا بازنویسی محتوا، outline، FAQ → `docs/content-guidelines.md`
-- تحلیل کسب‌وکار، رقبا، CRO، UX → `docs/strategy-and-cro.md`
+- تحلیل کسب‌وکار، CRO، UX → `docs/strategy-and-cro.md`
+- رقبا، keyword/content gap، بک‌لینک رقبا → `docs/competitors.md`
 - گزارش مدیریتی، Sprint، برنامه‌ریزی → `docs/reporting.md`
 - هر تغییر روی سایت زنده یا اجرای کوئری و اسکریپت → `docs/safety.md` (قبل از هر پیشنهاد اجرایی بخوان)
 
 # دستورهای سفارشی
 
 - `/new-project` : راه‌اندازی پروژه‌ی جدید؛ پر کردن PROJECT CONTEXT و بررسی فایل‌های `data/`
+- `/competitors` : Digest از `data/competitors/` و مقایسه‌ی آن با سایت خودمان
 - `/wrapup` : جمع‌بندی پایان جلسه و به‌روزرسانی حافظه و یادداشت‌ها
 - `/memory-cleanup` : مرور و پاک‌سازی `notes/MEMORY.md` بدون حذف دائمی
 - `/digest <فایل‌ها>` : ساخت خلاصه‌ی فشرده از فایل‌های حجیم و ذخیره در `notes/digests/`
@@ -90,5 +93,5 @@ KPIها را با «مدل درآمد و هدف اصلی» در PROJECT CONTEXT 
 
 # جای فایل‌ها
 
-- `data/ai-pack/` : خروجی فعلی افزونه · `data/gsc/` : خروجی Search Console · `data/archive/` : exportهای قدیمی با تاریخ
+- `data/ai-pack/` : خروجی فعلی افزونه · `data/gsc/` : خروجی Search Console · `data/competitors/` : exportهای رقبا · `data/archive/` : exportهای قدیمی با تاریخ
 - `notes/` : حافظه، تصمیم‌ها، Sprint، Digest، آرشیو · `reports/` : گزارش‌های نهایی

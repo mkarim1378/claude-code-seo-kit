@@ -23,6 +23,8 @@
 | cannibalization / duplicate title-meta / noindex / thin category | `seo_audit.json` (+ `keyword_map` برای کیورد) | تأیید روی entity در `knowledge.json` |
 | برند / GTIN / نظرات / تصویر / schema essentials محصول | `seo_audit.json` (findingهای commerce) یا مستقیم entity در `knowledge.json` | — |
 | عملکرد جستجو (کلیک، ایمپرشن، CTR، جایگاه) | فایل‌های `data/gsc/` | تطبیق با `keyword_map.json` |
+| رقبا / keyword gap / content gap / بک‌لینک رقبا / SERP یک کیورد | Digest رقبا در `notes/digests/` (اگر هست)، وگرنه `data/competitors/` (راهنما: `docs/competitors.md`) | تطبیق با `keyword_map.json` و `knowledge.json`؛ اگر فایل نبود، فایل مشخص را بخواه، حدس نزن |
+| پیشنهاد کیورد، موضوع محتوا، title/meta، لینک‌سازی یا CRO که به بازار وابسته است | همان منبع‌های سطر مربوط | قبل از نهایی‌کردن، چک کن داده‌ی رقبا هست یا نه (قانون ۸ در `docs/core-rules.md`) |
 | فقط `knowledge.json` موجود است | همان | محدودیت را بگو؛ برای orphan/Sprint/کیورد دقیق بخواه بقیه فایل‌ها را هم بگذارد |
 
 اگر فایل مناسب در `data/` نبود، جواب کلی و بی‌مدرک نساز. بنویس: «برای این سؤال به `[نام فایل]` نیاز دارم.»

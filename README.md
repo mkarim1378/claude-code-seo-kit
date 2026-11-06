@@ -46,10 +46,10 @@
 | `starter.json` · `CHANGELOG.md` | نسخه‌ی starter و فهرست مسیرهای قابل sync |
 | `notes/MEMORY.md` | حافظه‌ی کوتاه پروژه (سقف ۸۰ خط)، خودکار لود می‌شود |
 | `notes/decisions.md` · `sprint.md` · `digests/` · `archive/` | جزئیات تصمیم‌ها، Sprint، خلاصه‌ی فایل‌های حجیم، آرشیو |
-| `data/` | exportها (داخل git نمی‌رود) |
+| `data/` | exportها (داخل git نمی‌رود): `ai-pack/` افزونه، `gsc/` Search Console، `competitors/` رقبا، `archive/` قدیمی‌ها |
 | `reports/` | گزارش‌های نهایی |
 | `.claude/settings.json` | دسترسی‌های مشترک پروژه: خواندن `.env`، کلیدها و فایل‌های SQL ممنوع است (تنظیمات شخصی در `settings.local.json`، خارج از git) |
-| `.claude/commands/` | دستورهای `/new-project`، `/sync-starter`، `/wrapup`، `/memory-cleanup`، `/digest` |
+| `.claude/commands/` | دستورهای `/new-project`، `/competitors`، `/sync-starter`، `/wrapup`، `/memory-cleanup`، `/digest` |
 
 ## روال کار
 
@@ -62,5 +62,5 @@
 
 - دسترسی‌های Claude Code را فقط به همین پوشه محدود کن.
 - رمز، کلید API و بکاپ دیتابیس را در این پوشه نگذار.
-- قانون به‌روزرسانی حافظه در `CLAUDE.md` راهنماست، نه اجبار. اگر کلاد فراموش کرد، `/wrapup` را خودت بزن.
+- قانون به‌روزرسانی حافظه (در `docs/core-rules.md`) راهنماست، نه اجبار. اگر کلاد فراموش کرد، `/wrapup` را خودت بزن.
 - هوک (hook) خودکار برای پایان جلسه عمداً اضافه نشده: هوک Stop بعد از هر پاسخ فعال می‌شود، نه فقط آخر جلسه، و آزاردهنده است. اگر خواستی، جداگانه تنظیمش می‌کنیم.

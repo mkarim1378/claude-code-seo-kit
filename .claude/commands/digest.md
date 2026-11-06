@@ -25,4 +25,4 @@ argument-hint: <مسیر فایل یا فایل‌ها، مثلاً data/ai-pack
 ذخیره:
 
 - مسیر: `notes/digests/digest-<موضوع>-<YYYY-MM-DD>.md` (تاریخ را با `date +%F` بگیر)
-- بعد از ذخیره، یک خط ارجاع (مسیر + تاریخ) به بخش «exportها و Digestها» در `notes/MEMORY.md` اضافه کن، طبق قوانین حافظه در `CLAUDE.md`.
+- بعد از ذخیره، یک خط ارجاع (مسیر + تاریخ) به بخش «exportها و Digestها» در `notes/MEMORY.md` اضافه کن، طبق قوانین حافظه در `docs/core-rules.md`.

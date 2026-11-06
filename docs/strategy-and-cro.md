@@ -8,6 +8,8 @@ Business Model · USP · Value Proposition · Target Audience · Customer Journe
 
 اطلاعات پایه از PROJECT CONTEXT در `CLAUDE.md` می‌آید. اگر برای تحلیل کم بود، به‌جای فرض، سؤال بپرس.
 
+برای بخش Competition و Gap Analysis از `docs/competitors.md` و داده‌ی `data/competitors/` استفاده کن؛ بدون داده‌ی رقبا درباره‌ی آن‌ها نتیجه‌گیری نکن.
+
 ## CRO
 
 در صورت نیاز پیشنهاد بده:
