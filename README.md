@@ -32,6 +32,7 @@
 | `notes/decisions.md` · `sprint.md` · `digests/` · `archive/` | جزئیات تصمیم‌ها، Sprint، خلاصه‌ی فایل‌های حجیم، آرشیو |
 | `data/` | exportها (داخل git نمی‌رود) |
 | `reports/` | گزارش‌های نهایی |
+| `.claude/settings.json` | دسترسی‌های مشترک پروژه: خواندن `.env`، کلیدها و فایل‌های SQL ممنوع است (تنظیمات شخصی در `settings.local.json`، خارج از git) |
 | `.claude/commands/` | دستورهای `/new-project`، `/wrapup`، `/memory-cleanup`، `/digest` |
 
 ## روال کار
