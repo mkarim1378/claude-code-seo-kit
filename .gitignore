@@ -13,3 +13,6 @@ CLAUDE.local.md
 # رمز و کلید
 .env
 *.key
+
+# state ابزارهای جانبی
+.omc/
