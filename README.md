@@ -8,6 +8,20 @@
 4. داخل همین پوشه `claude` را اجرا کن.
 5. اولین پیام پیشنهادی: «از کجا شروع کنم؟»
 
+## استفاده به‌عنوان Starter (قالب پروژه)
+
+نسخه‌ی starter: 1.0
+
+1. این پوشه را به‌عنوان یک ریپوی **private** در گیت‌هاب بگذار و در Settings گزینه‌ی **Template repository** را فعال کن. هیچ داده‌ی واقعی پروژه‌ای را در starter commit نکن.
+2. برای هر پروژه‌ی جدید:
+   ```
+   gh repo create <نام-پروژه> --template <username>/<نام-starter> --private --clone
+   ```
+   یا در وب: **Use this template ← Create a new repository**.
+3. داخل پوشه‌ی پروژه‌ی جدید `claude` را اجرا کن و `/new-project` بزن تا PROJECT CONTEXT را از تو بپرسد و پر کند.
+4. هر پروژه یک پوشه و یک ریپوی جدا دارد. `claude` را همیشه داخل پوشه‌ی خود پروژه اجرا کن، نه پوشه‌ی والد، تا کانتکست و حافظه‌ی پروژه‌ها قاطی نشوند.
+5. بهبودهایی که بعداً روی starter می‌دهی خودکار به پروژه‌های قبلی نمی‌رسند. برای آن‌ها فایل‌های مشخص را دستی کپی یا diff کن (با شماره‌ی نسخه بالا پیگیری کن).
+
 ## ساختار
 
 | مسیر | کاربرد |
@@ -18,7 +32,7 @@
 | `notes/decisions.md` · `sprint.md` · `digests/` · `archive/` | جزئیات تصمیم‌ها، Sprint، خلاصه‌ی فایل‌های حجیم، آرشیو |
 | `data/` | exportها (داخل git نمی‌رود) |
 | `reports/` | گزارش‌های نهایی |
-| `.claude/commands/` | دستورهای `/wrapup`، `/memory-cleanup`، `/digest` |
+| `.claude/commands/` | دستورهای `/new-project`، `/wrapup`، `/memory-cleanup`، `/digest` |
 
 ## روال کار
 
