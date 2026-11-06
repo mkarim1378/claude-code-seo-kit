@@ -1,0 +1,19 @@
+{
+  "name": "claude-code-seo-kit",
+  "version": "1.1.0",
+  "repo": "https://github.com/mkarim1378/claude-code-seo-kit.git",
+  "branch": "main",
+  "sync_paths": [
+    "docs/",
+    ".claude/commands/",
+    ".claude/settings.json",
+    ".gitignore"
+  ],
+  "never_sync": [
+    "CLAUDE.md",
+    "notes/",
+    "data/",
+    "reports/",
+    "starter.json"
+  ]
+}
